@@ -1,13 +1,13 @@
-function compareJSON(json1, json2) {
-    const keys1 = Object.keys(json1);
-    const keys2 = Object.keys(json2);
+function compareJSON(obj1 , obj2) {
+    const keys1 = Object.keys(obj1 );
+    const keys2 = Object.keys(obj2);
   
     if (keys1.length !== keys2.length) {
       return false;
     }
   
     for (let key of keys1) {
-      if (!json2.hasOwnProperty(key) || json1[key] !== json2[key]) {
+      if (!obj2.hasOwnProperty(key) || obj1[key] !== obj2[key]) {
         return false;
       }
     }
@@ -15,16 +15,16 @@ function compareJSON(json1, json2) {
     return true;
   }
   
-  // Example usage
-  const json1 = {
-    "name": "John",
-    "age": 30,
-    "city": "New York"
+  
+  const obj1 = {
+    "name": "person 1",
+    "age": 5,
+    
   };
    
-  const json2 = {
-    "city": "New York",
-    "name": "John",
-    "age": 30
+  const obj2 = {
+       "age": 5,
+    "name": "person 1"
+    
   };
-  console.log(compareJSON(json1, json2)); // Output: true  
+  console.log(compareJSON(obj1, obj2)); 
